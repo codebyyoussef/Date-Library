@@ -45,27 +45,27 @@ This is a C++ Date library that provides comprehensive functionality for working
     * Print week days or a calendar for a specific month or year.
 
 ## Example Usage
-\#include "Date.h"
+      \#include "Date.h"
+      
+      int main() 
+      {
+          Date today; // Current date
+          Date specificDate("07/01/2025");  // Specific date from string
 
-int main() 
-{
-    Date today; // Current date
-    Date specificDate("07/01/2025");  // Specific date from string
+          today.print();  // Output current date in "dd/mm/yyyy" format
 
-    today.print();  // Output current date in "dd/mm/yyyy" format
+          // Manipulating the date
+          Date nextWeek = Date::increaseDateByOneWeek(today);
+          nextWeek.print();
 
-    // Manipulating the date
-    Date nextWeek = Date::increaseDateByOneWeek(today);
-    nextWeek.print();
-
-    // Comparing dates
-    bool isBefore = today.isDateBeforeDate2(specificDate);
-    cout << "Is today before 07/01/2025? " << (isBefore ? "Yes" : "No") << endl;
+          // Comparing dates
+          bool isBefore = today.isDateBeforeDate2(specificDate);
+          cout << "Is today before 07/01/2025? " << (isBefore ? "Yes" : "No") << endl;
     
-    // Calculate age in days
-    Date birthDate("01/01/2000");
-    cout << "Age in days: " << birthDate.caluclateMyAgeInDays() << endl;
-}
+          // Calculate age in days
+          Date birthDate("01/01/2000");
+          cout << "Age in days: " << birthDate.caluclateMyAgeInDays() << endl;
+      }
 ## Methods Overview
 * getDay(), getMonth(), getYear(): Get the respective components of the date.
 * setDay(), setMonth(), setYear(): Set the respective components of the date.
